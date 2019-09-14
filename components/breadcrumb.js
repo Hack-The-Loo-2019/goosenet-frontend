@@ -9,7 +9,7 @@ class Breadcrumb extends React.Component{
     path = this.props.path.reduce((acc,now)=>[...acc,' > ',<a>{now}</a>],[ApartmentName])
     if(this.props.page != 'dm'){
       return (
-        <div class="breadcrumb" style={{position: 'fixed'}}>
+        <div className="breadcrumb" style={{position: 'fixed'}}>
           <p className="breadcrumbText">
             {path}
           </p>
