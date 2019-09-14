@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Head from '../components/head'
 import Nav from '../components/nav'
 import Foot from '../components/foot'
+import Layout from '../components/layout'
 import { Component } from 'react'
 // import Axios from 'axios';
 
@@ -47,9 +48,8 @@ class Chat extends Component {
 
     render() {
         return(
-            <div className="main-wrapper">
-                <Head title="Home" />
-                    <Nav />
+            <Layout page='Chat' path={['Chat']} >
+                <div className='contentWrapper'>
                     <p>Hello Ngentot</p>
                     <div className="container">
                         <form onSubmit={this.handleSubmit}>
@@ -57,9 +57,9 @@ class Chat extends Component {
                             <button class="btn btn-primary btn-block">Send</button>
                         </form> 
                     </div>
-                <Foot />
             </div>
-        );
+            </Layout>
+        )
     }
 
 }

@@ -9,8 +9,8 @@ class Layout extends React.Component {
         return (
             <div className='mainWrapper'>
                 <Head title="zucc" />
-                <Nav page={this.props.page}/>
-                <Breadcrumb path={this.props.path} page={this.props.page}/>
+                <Nav/>
+                {/* <Breadcrumb path={this.props.path} page={this.props.page}/> */}
                 {this.props.children}
                 <Foot  />
             </div>

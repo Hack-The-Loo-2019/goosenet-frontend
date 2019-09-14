@@ -1,12 +1,12 @@
 import React from 'react'
 
-
-import {ApartmentName} from '../utils/constants.js'
-
 class Breadcrumb extends React.Component{
   render(){
-    var path = []
-    path = this.props.path.reduce((acc,now)=>[...acc,' > ',<a>{now}</a>],[ApartmentName])
+    var path = this.props.path.slice(0);
+    if(path.length > 1){
+      path.shift()
+      path = path.reduce((acc,now)=>[...acc,' > ',<a>{now}</a>],[this.props.path[0]])
+    }
     if(this.props.page != 'dm'){
       return (
         <div className="breadcrumb" style={{position: 'fixed'}}>

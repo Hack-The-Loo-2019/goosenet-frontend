@@ -9,13 +9,18 @@
     height: 100vh;
     left: 0px;
     top: 0px;
+    overflow: scroll;
 }
 /* NAVBAR STYLES */
 .navbar {
+    position: fixed;
+    width: 100vw;
     height: 8vh;
     background-color: #fcfcf9;
     text-align: center;
-    z-index: 10;
+    z-index: 100;
+
+    box-shadow: 0 0 15px 3px rgb(218, 218, 218);
 }
 .smallIcon {
     height: 5vh;
@@ -26,10 +31,12 @@
     font-size: 2.6vh;
 }
 .breadcrumb {
+    margin-top: 8vh;
     width: 100vw;
     height: 6vh;
     background-color:  #f6f6f5;
-    box-shadow: 0 0 10px -3px rgb(238, 236, 236) inset;
+    box-shadow: 0 0 15px 1px rgb(224, 222, 222);
+    z-index: 99;
 }
 .breadcrumbText{
     display: inline-block;
@@ -47,6 +54,7 @@
     background-color: #fcfcf9;
     box-shadow: 0 0 10px 3px rgb(235, 233, 233);
     text-align: center;
+    z-index: 100;
 }
 
 .form-control {
@@ -96,4 +104,9 @@
     border-color: #007bff;
   }
 
-  
+  /* PAGE STYLES */
+  .contentWrapper {
+      margin-top: 10vh;
+      display: block;
+      height: 200vh;
+  }
