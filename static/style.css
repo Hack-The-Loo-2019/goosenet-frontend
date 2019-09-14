@@ -3,7 +3,7 @@
     color: #1f1f1f;
 }
 
-.main-wrapper {
+.mainWrapper {
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -14,30 +14,28 @@
 .navbar {
     height: 8vh;
     background-color: #fcfcf9;
-    box-shadow: 0 0 10px 3px rgb(238, 236, 236);
     text-align: center;
+    z-index: 10;
 }
-.icon-5 {
+.smallIcon {
     height: 5vh;
     width: 5vh;
-}
-
-.icon-6 {
-    height: 6vh;
-    width: 6vh;
-}
-
-.icon-7 {
-    height: 7vh;
-    width: 7vh;
-}
-
-.titleText {
-    font-family: 'PT Sans', sans-serif;
 }
 .logoText {
     font-family: 'Courgette', cursive;
     font-size: 2.6vh;
+}
+.breadcrumb {
+    width: 100vw;
+    height: 6vh;
+    background-color:  #f6f6f5;
+    box-shadow: 0 0 10px -3px rgb(238, 236, 236) inset;
+}
+.breadcrumbText{
+    display: inline-block;
+    margin: 1.5vh 1.5vh 1.5vh 1.5vh;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 2.5vh;
 }
 
 /* FOOTER STYLES */
