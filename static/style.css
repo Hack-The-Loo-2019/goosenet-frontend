@@ -110,3 +110,8 @@
       display: block;
       height: 200vh;
   }
+
+  .smallerIcon {
+    height: 3vh;
+    width: 3vh;
+  }

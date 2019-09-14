@@ -5,12 +5,16 @@ function randomColor(){
 }
 
 class TextPic extends React.Component{
+
+    constructor(props){
+        super(props)
+        this.color = randomColor()
+    }
+
   render(){
       var letters = this.props.string.toUpperCase().replace(/[^a-zA-Z0-9]+/g, "-");
-      console.log(letters)
       letters = letters.split('-')
       letters = letters.filter(word=>word.length>0)
-      console.log(letters)
       if(letters.length < 2) letters.push(' ')
       if(letters.length < 2) letters.push(' ')
     return (
@@ -19,7 +23,7 @@ class TextPic extends React.Component{
               width: (2*this.props.radius)+'vh',
               height: (2*this.props.radius)+'vh',
               borderRadius: this.props.radius+'vh',
-              backgroundColor: randomColor(),
+              backgroundColor: this.color,
               textAlign: "center",
               fontSize: (0.8*this.props.radius)+'vh',
               color: 'white',

@@ -13,13 +13,26 @@ class Chat extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {message:''}
+        this.backToChatrooms = this.backToChatrooms.bind(this)
+
+        this.state = {
+            message:'',
+            page: 'in-chat',
+            roomname: 'HackTheLoo',
+            backbutton: this.backToChatrooms
+        }
         this.handleMessageInput = this.handleMessageInput.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleMessageInput(event) {
         this.setState({ message: event.target.value })
+    }
+
+    backToChatrooms(){
+        this.setState({
+            page: 'chatrooms',
+        })
     }
 
     async handleSubmit (event) {
@@ -50,7 +63,7 @@ class Chat extends Component {
 
     render() {
         return(
-            <Layout page='Chat' path={['Chat']} >
+            <Layout page={this.state.page} roomname={this.state.roomname} back={this.state.backbutton}>
                 <div className='contentWrapper'>
                     <p>Hello Ngentot</p>
                     <div className="container">
@@ -58,12 +71,7 @@ class Chat extends Component {
                             <input class="form-control" id="name" name="name" placeholder="Name" type="text" required="" onChange={this.handleMessageInput}/>
                             <button class="btn btn-primary btn-block">Send</button>
                         </form> 
-
-        <TextPic radius={10} string="Hansa Halim" />
-
-        <TextPic radius={10} string="Ruben Solomon Partono" />
-
-        <TextPic radius={10} string="Thanh" />
+                        <TextPic radius={10} string={this.state.message} />
                     </div>
                 </div>
             </Layout>
