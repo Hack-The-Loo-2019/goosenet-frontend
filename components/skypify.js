@@ -20,14 +20,14 @@ class TextPic extends React.Component{
     return (
       <div className='textPicture' style={
           {
-              width: (2*this.props.radius)+'vh',
-              height: (2*this.props.radius)+'vh',
-              borderRadius: this.props.radius+'vh',
+              width: (2*this.props.radius)+this.props.units,
+              height: (2*this.props.radius)+this.props.units,
+              borderRadius: this.props.radius+this.props.units,
               backgroundColor: this.color,
               textAlign: "center",
-              fontSize: (0.8*this.props.radius)+'vh',
+              fontSize: (0.8*this.props.radius)+this.props.units,
               color: 'white',
-              lineHeight: (1.9*this.props.radius)+'vh'
+              lineHeight: (1.9*this.props.radius)+this.props.units
             }
         }>
             {letters[0][0]+letters[1][0]}

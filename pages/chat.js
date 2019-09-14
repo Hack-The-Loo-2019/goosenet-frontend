@@ -5,6 +5,7 @@ import Nav from '../components/nav'
 import Foot from '../components/foot'
 import Layout from '../components/layout'
 import TextPic from '../components/skypify'
+import ChatMessage from '../components/chatmessage'
 
 import { Component } from 'react'
 // import Axios from 'axios';
@@ -72,6 +73,8 @@ class Chat extends Component {
                             <button class="btn btn-primary btn-block">Send</button>
                         </form> 
                         <TextPic radius={10} string={this.state.message} />
+                        <ChatMessage />
+                        <ChatMessage />
                     </div>
                 </div>
             </Layout>
