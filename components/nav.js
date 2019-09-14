@@ -1,59 +1,36 @@
 import React from 'react'
-import Link from 'next/link'
+import {ApartmentName} from '../utils/constants.js'
 
-const links = [
-  { href: 'https://github.com/segmentio/create-next-app', label: 'Github' }
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
-
-const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link prefetch href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      <ul>
-        {links.map(({ key, href, label }) => (
-          <li key={key}>
-            <Link href={href}>
-              <a>{label}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </ul>
-
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
-    `}</style>
-  </nav>
-)
+class Nav extends React.Component{
+  render(){
+    if(this.props.page === 'dm'){
+      return (
+        <nav className="navbar">
+          <div style={{position: 'absolute', padding: '2vh 2vh 2vh 2vh', top: '0', fontSize: "3vh"}}>
+            <p className="titleText" style={{display: "inline", margin: "0"}}>{ApartmentName}</p>
+          </div>
+          <div style={{position: 'absolute', padding: '2.1vh 0 2.1vh 0', top: '0', left: '39vw'}}>
+            <p className="logoText" style={{display: "inline", margin: "0"}}>fuccomod8u</p>
+          </div>
+          <a className="navbar-item" style={{position: "absolute", right:"0"}}>
+            <img className="small-icon" style={{margin: "1.4vh 2vh 1.5vh 1.5vh"}} src="/static/assets/envelope.png" />
+          </a>
+        </nav>
+      )
+    } else return (
+      <nav className="navbar">
+        <div style={{position: 'absolute', padding: '2vh 2vh 2vh 2vh', top: '0', fontSize: "3vh"}}>
+          <p className="titleText" style={{display: "inline", margin: "0"}}>{ApartmentName}</p>
+        </div>
+        <div style={{position: 'absolute', padding: '2.1vh 0 2.1vh 0', top: '0', left: '39vw'}}>
+          <p className="logoText" style={{display: "inline", margin: "0"}}>fuccomod8u</p>
+        </div>
+        <a className="navbar-item" style={{position: "absolute", right:"0"}}>
+          <img className="small-icon" style={{margin: "1.4vh 2vh 1.5vh 1.5vh"}} src="/static/assets/envelope.png" />
+        </a>
+      </nav>
+    )
+  }
+}
 
 export default Nav
