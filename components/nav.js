@@ -9,11 +9,11 @@ class Nav extends React.Component{
           <div style={{position: 'absolute', padding: '2vh 2vh 2vh 2vh', top: '0', fontSize: "3vh"}}>
             <p className="titleText" style={{display: "inline", margin: "0"}}>{ApartmentName}</p>
           </div>
-          <div style={{position: 'absolute', padding: '2.1vh 0 2.1vh 0', top: '0', left: '39vw'}}>
-            <p className="logoText" style={{display: "inline", margin: "0"}}>fuccomod8u</p>
+          <div style={{display: "inline-block", padding: '2.1vh 0 2.1vh 0', top: '0'}}>
+            <p className="logoText" style={{margin: "0"}}>zuccomod8u</p>
           </div>
           <a className="navbar-item" style={{position: "absolute", right:"0"}}>
-            <img className="small-icon" style={{margin: "1.4vh 2vh 1.5vh 1.5vh"}} src="/static/assets/envelope.png" />
+            <img className="icon-5" style={{margin: "1.4vh 2vh 1.5vh 1.5vh"}} src="/static/assets/envelope.png" />
           </a>
         </nav>
       )
@@ -22,11 +22,11 @@ class Nav extends React.Component{
         <div style={{position: 'absolute', padding: '2vh 2vh 2vh 2vh', top: '0', fontSize: "3vh"}}>
           <p className="titleText" style={{display: "inline", margin: "0"}}>{ApartmentName}</p>
         </div>
-        <div style={{position: 'absolute', padding: '2.1vh 0 2.1vh 0', top: '0', left: '39vw'}}>
-          <p className="logoText" style={{display: "inline", margin: "0"}}>fuccomod8u</p>
+        <div style={{display: "inline-block", padding: '2.1vh 0 2.1vh 0', top: '0'}}>
+          <p className="logoText" style={{margin: "0"}}>zuccomod8u</p>
         </div>
         <a className="navbar-item" style={{position: "absolute", right:"0"}}>
-          <img className="small-icon" style={{margin: "1.4vh 2vh 1.5vh 1.5vh"}} src="/static/assets/envelope.png" />
+          <img className="icon-5" style={{margin: "1.4vh 2vh 1.5vh 1.5vh"}} src="/static/assets/envelope.png" />
         </a>
       </nav>
     )

@@ -15,11 +15,23 @@
     height: 8vh;
     background-color: #fcfcf9;
     box-shadow: 0 0 10px 3px rgb(238, 236, 236);
+    text-align: center;
 }
-.small-icon {
+.icon-5 {
     height: 5vh;
     width: 5vh;
 }
+
+.icon-6 {
+    height: 6vh;
+    width: 6vh;
+}
+
+.icon-7 {
+    height: 7vh;
+    width: 7vh;
+}
+
 .titleText {
     font-family: 'PT Sans', sans-serif;
 }
@@ -33,7 +45,8 @@
     bottom: 0;
     width: 100vw;
     position: fixed;
-    height: 10vh;
+    height: 9vh;
     background-color: #fcfcf9;
     box-shadow: 0 0 10px 3px rgb(235, 233, 233);
+    text-align: center;
 }
