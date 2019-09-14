@@ -4,6 +4,8 @@ import Head from '../components/head'
 import Nav from '../components/nav'
 import Foot from '../components/foot'
 import Layout from '../components/layout'
+import TextPic from '../components/skypify'
+
 import { Component } from 'react'
 // import Axios from 'axios';
 
@@ -56,8 +58,14 @@ class Chat extends Component {
                             <input class="form-control" id="name" name="name" placeholder="Name" type="text" required="" onChange={this.handleMessageInput}/>
                             <button class="btn btn-primary btn-block">Send</button>
                         </form> 
+
+        <TextPic radius={10} string="Hansa Halim" />
+
+        <TextPic radius={10} string="Ruben Solomon Partono" />
+
+        <TextPic radius={10} string="Thanh" />
                     </div>
-            </div>
+                </div>
             </Layout>
         )
     }
