@@ -6,6 +6,8 @@ import Foot from '../components/foot'
 import Layout from '../components/layout'
 import TextPic from '../components/skypify'
 import ChatMessage from '../components/chatmessage'
+import Chatroom from '../components/chatroom'
+import {Chatrooms} from '../static/hardcode'
 
 import { Component } from 'react'
 // import Axios from 'axios';
@@ -19,11 +21,16 @@ class Chat extends Component {
         this.state = {
             message:'',
             page: 'in-chat',
-            roomname: 'HackTheLoo',
+            room: {
+                name: 'HackTheLoo',
+                members: 'You, Hansa, Ruben, Thanh'
+            },
             backbutton: this.backToChatrooms
         }
         this.handleMessageInput = this.handleMessageInput.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.backToChatrooms = this.backToChatrooms.bind(this)
+        this.enterChat = this.enterChat.bind(this)
     }
 
     handleMessageInput(event) {
@@ -33,6 +40,14 @@ class Chat extends Component {
     backToChatrooms(){
         this.setState({
             page: 'chatrooms',
+        })
+    }
+
+    enterChat(chatroomData){
+        this.setState({
+            page: 'in-chat',
+            room: chatroomData,
+
         })
     }
 
@@ -63,18 +78,29 @@ class Chat extends Component {
     }
 
     render() {
-        return(
-            <Layout page={this.state.page}>
-                {!(this.state.page=='in-chat')||<ChatNav roomname={this.state.roomname} back={this.state.backbutton} />}
+        var chatNav = this.state.page=='in-chat'? <ChatNav room={this.state.room} back={this.state.backbutton} /> : null
+        var chatText = this.state.page=='in-chat'? <ChatTextBar /> : null
+
+        var displayPage
+        if(this.state.page == 'in-chat'){
+            displayPage = (
                 <div className='contentWrapper'>
                     <div className="container">
-                        <TextPic radius={10} string={this.state.message} />
                         <ChatMessage />
                         <ChatMessage />
                         <ChatMessage />
                     </div>
                 </div>
-                {!(this.state.page=='in-chat')||<ChatTextBar />}
+            )
+        } else if(this.state.page == 'chatrooms'){
+            displayPage = <ChatroomsPage enterChat={this.enterChat}/>
+        }
+
+        return(
+            <Layout page={this.state.page}>
+                {chatNav}
+                {displayPage}
+                {chatText}
             </Layout>
         )
     }
@@ -89,8 +115,8 @@ class ChatNav extends React.Component{
                     <img className="smallerIcon" style={{padding: "21.17px 11px 18.25px 11px"}} src="/static/assets/back.png" />
                 </a>
                 <div style={{display: "inline-block", padding: '11px 0 2.73px 0', top: '0', marginLeft: '43.8px'}}>
-                    <p style={{margin: "0", fontSize: '1.1rem'}}>{this.props.roomname}</p>
-                    <p style={{margin: "3.65px 0 0 0", fontSize: '13.14px', color: '#797979'}}>You, Ruben, Hansa, Thanh</p>
+                    <p style={{margin: "0", fontSize: '1.1rem'}}>{this.props.room.name}</p>
+                    <p style={{margin: "3.65px 0 0 0", fontSize: '13.14px', color: '#797979'}}>{this.props.room.members}</p>
                 </div>
         
                 <a className="navbar-item" style={{position: "absolute", right:"0"}}>
@@ -114,5 +140,17 @@ class ChatTextBar extends React.Component{
     }
 }
 
+class ChatroomsPage extends React.Component{
+    
+    render(){
+        return (
+            <div className='contentWrapper'>
+                {Chatrooms.map(chatroomData=>(
+                    <Chatroom room={chatroomData} enterChat={this.props.enterChat}/>
+                ))}
+            </div>
+        )
+    }
+}
 
 export default Chat

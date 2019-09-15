@@ -1,6 +1,6 @@
 * {
     font-family: 'Lato', sans-serif;
-    color: #1f1f1f;
+    color: #302f2f;
 }
 
 .mainWrapper {
@@ -146,4 +146,21 @@
   .time-right {
     float: right;
     color: #aaa;
+  }
+
+  .chatroom {
+    margin: 5px 18.25px -5px 14.6px;
+    display: flex;
+    text-align: left;
+  }
+
+  .picColumn {
+    width: 16vw;
+    overflow: wrap;
+    padding-top: 4.3px;
+  }
+
+  .contentColumn {
+    margin-left: 3vw;
+    padding-top: 9px;
   }
