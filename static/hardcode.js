@@ -26,3 +26,9 @@ export const Chatrooms = [
         members: 'Thanh, Thanh\'s Anime GF'
     }
 ]
+
+export const baseUrl = 'https://us-central1-htn-2019-hack-the-loo.cloudfunctions.net'
+export const chatPostUrl = baseUrl+'/chat'
+export const chatGetUrl = baseUrl+'/chat'
+export const announcePostUrl = baseUrl
+export const announceGetUrl = baseUrl

@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 import TextPic from '../components/skypify'
 import ChatMessage from '../components/chatmessage'
 import Chatroom from '../components/chatroom'
-import {Chatrooms} from '../static/hardcode'
+import {Chatrooms, baseUrl, chatGetUrl, chatPostUrl} from '../static/hardcode'
 
 import { Component } from 'react'
 // import Axios from 'axios';
@@ -55,7 +55,7 @@ class Chat extends Component {
         event.preventDefault()
         this.setState({ error: '' })
         const message = this.state.message
-        const url = `https://posturl.here/`
+        const url = chatPostUrl
         this.setState({ loading: "is-loading" })
 
         try {
@@ -139,9 +139,9 @@ class ChatTextBar extends React.Component{
         var inputStyle = this.props.message.length > 0? {width: '65vw'} : {}
         return (
             <footer className="foot" style={{height:'58.4px', textAlign: 'left'}}>
-                <form onSubmit={this.props.handleSubmit} style={{marginTop: '11px'}}>
-                    <input class="inputBar" style={inputStyle} id="name" name="name" placeholder="" type="text" required="" onChange={this.props.handleMessageInput}/>
-                    <button class="sendButton" style={buttonStyle} >Send</button>
+                <form onSubmit={()=>{if(this.props.message.length > 0) this.props.handleSubmit()}} style={{marginTop: '11px'}}>
+                    <input className="inputBar" style={inputStyle} id="name" name="name" placeholder="" type="text" required="" onChange={this.props.handleMessageInput}/>
+                    <button className="sendButton" style={buttonStyle} >Send</button>
                 </form> 
             </footer>
         )

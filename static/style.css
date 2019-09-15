@@ -220,3 +220,34 @@ img {
     margin-left: 3vw;
     padding-top: 4px;
   }
+
+  .postWrapper {
+    display: flex;
+    margin: 2vw;
+    padding: 1vw 2vw 1.5vw 1vw;
+    flex-direction: column;
+    background-color: #faf8f8;
+    border-radius: 3px;
+    border: 1px solid #ececea;
+    box-shadow: 0 0 10px 2px #e4e4e0;
+  }
+
+  .flexWrapper {
+    display: flex;
+    align-items: stretch;
+    margin: .5vw 0 0 2vw;
+  }
+
+  .labelCell {
+    display: flex;
+    padding-bottom: 4.3px; 
+    flex-grow: 8;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+  }
+
+  .labelTag {
+    padding: 1vw 3vw 1.5vw 3vw;
+    border-radius: 1.5vw;
+  }

@@ -1,14 +1,23 @@
 import React from 'react'
 
-function randomColor(){
-    return '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6)
+export const getHashedColor = function(str){
+  var hash = 0;
+  for (var i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  var colour = '#';
+  for (var i = 0; i < 3; i++) {
+    var value = (hash >> (i * 8)) & 0xFF;
+    colour += ('00' + value.toString(16)).substr(-2);
+  }
+  return colour;
 }
 
 class TextPic extends React.Component{
 
     constructor(props){
         super(props)
-        this.color = randomColor()
+        this.color = getHashedColor(this.props.string)
     }
 
   render(){

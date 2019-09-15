@@ -6,15 +6,22 @@ import Foot from '../components/foot'
 
 import Layout from '../components/layout'
 import Chat from '../pages/chat'
+import { Router } from 'next/router'
 
-const Home = () => (
-  <Layout path={['Forum','Thread']} page="Forum">
-    <h1 className="title">Welcome to Next!</h1>
-    <p className="description">
-      To get started, edit <code>pages/index.js</code> and save to reload.
-    </p>
-  </Layout>
-)
+class Home extends React.Component{
 
-// export default Home
-export default Chat
+  render(){
+    Router.push('/chat')
+    return (
+      <Layout path={['Forum','Thread']} page="Forum">
+        <h1 className="title">Welcome to Next!</h1>
+        <p className="description">
+          To get started, edit <code>pages/index.js</code> and save to reload.
+        </p>
+      </Layout>
+    )
+  }
+}
+
+
+export default Home
