@@ -3,9 +3,7 @@ import Link from 'next/link'
 import Head from '../components/head'
 import Nav from '../components/nav'
 import Foot from '../components/foot'
-import Breadcrumb from '../components/breadcrumb'
 
-import {ApartmentName} from '../utils/constants.js'
 import Layout from '../components/layout'
 import Chat from '../pages/chat'
 

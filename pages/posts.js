@@ -15,7 +15,7 @@ class Posts extends Component {
                       <table>
                           <tr>
                             <td>
-                                <img src="static/favicon.ico" alt="Avatar" style={{width: '100%', marginTop:'0vh'}}/>
+                                <img src="static/favicon.ico" alt="Avatar" style={{width: '100%', marginTop:'0'}}/>
                             </td>
                             <td>
                                 <h4 style={{margin: '0'}}>Mr. Ngentot</h4>
@@ -32,7 +32,7 @@ class Posts extends Component {
                       <table>
                           <tr>
                             <td>
-                                <img src="static/favicon.ico" alt="Avatar" style={{width: '100%', marginTop:'0vh'}}/>
+                                <img src="static/favicon.ico" alt="Avatar" style={{width: '100%', marginTop:'0'}}/>
                             </td>
                             <td>
                                 <h4 style={{margin: '0'}}>Ms. Duc Thanh</h4>
@@ -49,7 +49,7 @@ class Posts extends Component {
                       <table>
                           <tr>
                             <td>
-                                <img src="static/favicon.ico" alt="Avatar" style={{width: '100%', marginTop:'0vh'}}/>
+                                <img src="static/favicon.ico" alt="Avatar" style={{width: '100%', marginTop:'0'}}/>
                             </td>
                             <td>
                                 <h4 style={{margin: '0'}}>Mr. Goose</h4>

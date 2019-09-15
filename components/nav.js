@@ -5,13 +5,13 @@ class Nav extends React.Component{
     return (
       <nav className="navbar">
         <a className="navbar-item" style={{position: "absolute", left: '0'}}>
-          <img className="smallIcon" style={{margin: "1.4vh 2vh 1.5vh 1.5vh"}} src="/static/assets/settings.png" />
+          <img className="smallIcon" style={{margin: "10.22px 14.6px 11px 11px"}} src="/static/assets/settings.png" />
         </a>
-        <div style={{display: "inline-block", padding: '2.1vh 0 2.1vh 0', top: '0'}}>
+        <div style={{display: "inline-block", padding: '2.7.3px 0 2.7.3px 0', top: '0'}}>
           <p className="logoText" style={{margin: "0"}}>zuccomod8u</p>
         </div>
         <a className="navbar-item" style={{position: "absolute", right:"0"}}>
-          <img className="smallIcon" style={{margin: "1.4vh 2vh 1.5vh 1.5vh"}} src="/static/assets/envelope.png" />
+          <img className="smallIcon" style={{margin: "10.22px 14.6px 11px 11px"}} src="/static/assets/envelope.png" />
         </a>
       </nav>
     )

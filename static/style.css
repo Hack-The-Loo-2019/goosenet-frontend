@@ -15,7 +15,7 @@
 .navbar {
     position: fixed;
     width: 100vw;
-    height: 8vh;
+    height: 58.4px;
     background-color: #fcfcf9;
     text-align: center;
     z-index: 100;
@@ -23,26 +23,26 @@
     box-shadow: 0 0 15px 3px rgba(0,0,0,0.3);
 }
 .smallIcon {
-    height: 5vh;
-    width: 5vh;
+    height: 36.5px;
+    width: 36.5px;
 }
 .logoText {
     font-family: 'Courgette', cursive;
-    font-size: 2.6vh;
+    font-size: 18.98px;
 }
 .breadcrumb {
-    margin-top: 8vh;
+    margin-top: 58.4px;
     width: 100vw;
-    height: 6vh;
+    height: 43.8px;
     background-color:  #f6f6f5;
     box-shadow: 0 0 15px 1px rgb(224, 222, 222);
     z-index: 99;
 }
 .breadcrumbText{
     display: inline-block;
-    margin: 1.5vh 1.5vh 1.5vh 1.5vh;
+    margin: 11px 11px 11px 11px;
     font-family: 'PT Sans', sans-serif;
-    font-size: 2.5vh;
+    font-size: 18.25px;
 }
 
 /* FOOTER STYLES */
@@ -50,7 +50,7 @@
     bottom: 0;
     width: 100vw;
     position: fixed;
-    height: 9vh;
+    height: 65.7px;
     background-color: #fcfcf9;
     box-shadow: 0 0 12px 2px rgba(0,0,0,0.2);
     text-align: center;
@@ -60,7 +60,7 @@
 .inputBar {
     display: inline-block;
     width: 77vw;
-    height: 3vh;
+    height: 21.9px;
     padding: 1vw 2vw;
     font-size: 1rem;
     font-weight: 400;
@@ -84,13 +84,13 @@
   width: 20vw;
   font-size: 1rem;
   padding: 1vw 2vw;
-  height: 4.5vh;
+  height: 32.85px;
   background-color: #007bff;
 }
   .sendButton {
     display: inline-block;
     width: 8vw;
-    height: 4.5vh;
+    height: 32.85px;
     color: #212529;
     text-align: center;
     background-color: #c4c4c4;
@@ -101,19 +101,19 @@
     border-radius: 0.25rem;
     transition: width 0.3s ease-in, height 0.3s ease-in, font-size 0.3s ease-in, padding 0.3s ease-in, background-color 0.3s ease-in;
     border-width: 0;
-    margin-top: -.5vh;
+    margin-top: -3.65px;
   }
 
   /* PAGE STYLES */
   .contentWrapper {
-      margin-top: 11vh;
-      margin-bottom: 10vh;
+      margin-top: 17.3px;
+      margin-bottom: 730px;
       display: block;
   }
 
   .smallerIcon {
-    height: 3vh;
-    width: 3vh;
+    height: 21.9px;
+    width: 21.9px;
   }
   
   .container-posts {

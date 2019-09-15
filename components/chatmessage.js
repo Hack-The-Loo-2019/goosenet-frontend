@@ -4,13 +4,13 @@ import TextPic from '../components/skypify'
 class ChatMessage extends React.Component {
     render(){
         return (
-            <div className='message' style={{display: 'flex', margin: "2vh 2.5vh 2vh 2vh"}}>
-                <div className="picColumn" style={{width: '12vw', overflow: 'wrap', paddingTop: '.6vh'}}>
+            <div className='message' style={{display: 'flex', margin: "14.6px 18.25px 14.6px 14.6px"}}>
+                <div className="picColumn" style={{width: '12vw', overflow: 'wrap', paddingTop: '4.3px'}}>
                     <TextPic radius={6} units='vw' string='Massive Elephant' />
                     {/* <img style={{width: '12vw', height: '12vw'}} src="/static/assets/avatar.png" /> */}
                 </div>
                 <div className="contentColumn" style={{marginLeft: '3vw'}}>
-                    <p style={{margin: '0 0 1vh 0'}}><b>
+                    <p style={{margin: '0 0 7.3px 0'}}><b>
                         Massive Elephant
                     </b></p>
                     <p style={{margin: '0'}}>

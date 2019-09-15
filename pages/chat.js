@@ -84,17 +84,17 @@ class Chat extends Component {
 class ChatNav extends React.Component{
     render(){
         return (
-            <nav className="navbar" style={{height: '9vh', textAlign: 'left'}}>
+            <nav className="navbar" style={{height: '65.7px', textAlign: 'left'}}>
                 <a className="navbar-item" style={{position: "absolute", left:"0"}} onClick={this.props.back}>
-                    <img className="smallerIcon" style={{padding: "2.9vh 1.5vh 2.5vh 1.5vh"}} src="/static/assets/back.png" />
+                    <img className="smallerIcon" style={{padding: "21.17px 11px 18.25px 11px"}} src="/static/assets/back.png" />
                 </a>
-                <div style={{display: "inline-block", padding: '1.5vh 0 2.1vh 0', top: '0', marginLeft: '6vh'}}>
+                <div style={{display: "inline-block", padding: '11px 0 2.73px 0', top: '0', marginLeft: '43.8px'}}>
                     <p style={{margin: "0", fontSize: '1.1rem'}}>{this.props.roomname}</p>
-                    <p style={{margin: "0.5vh 0 0 0", fontSize: '1.8vh', color: '#797979'}}>You, Ruben, Hansa, Thanh</p>
+                    <p style={{margin: "3.65px 0 0 0", fontSize: '13.14px', color: '#797979'}}>You, Ruben, Hansa, Thanh</p>
                 </div>
         
                 <a className="navbar-item" style={{position: "absolute", right:"0"}}>
-                    <img className="smallIcon" style={{margin: "1.9vh 2.5vh 1.5vh 1.5vh"}} src="/static/assets/chat-2.png" />
+                    <img className="smallIcon" style={{margin: "13.87px 18.25px 11px 11px"}} src="/static/assets/chat-2.png" />
                 </a>
             </nav>
         )
@@ -104,9 +104,8 @@ class ChatNav extends React.Component{
 class ChatTextBar extends React.Component{
     render(){
         return (
-            <footer className="foot" style={{height:'8vh', textAlign: 'left'}}>
-
-                <form onSubmit={this.handleSubmit} style={{marginTop: '1.5vh'}}>
+            <footer className="foot" style={{height:'58.4px', textAlign: 'left'}}>
+                <form onSubmit={this.handleSubmit} style={{marginTop: '11px'}}>
                     <input class="inputBar" id="name" name="name" placeholder="" type="text" required="" onChange={this.handleMessageInput}/>
                     <button class="sendButton">Send</button>
                 </form> 
