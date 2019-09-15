@@ -66,7 +66,7 @@ class Forms extends Component {
 
     render() {
         return(
-            <Layout page='Posts' path={['Posts']}>
+            <Layout page='Forms' tab={2}>
                 <div className='contentWrapper'>
                     <p> &nbsp; &nbsp; Survey Monkey Forms</p>
                     {this.state.data.map((talkList) => {
