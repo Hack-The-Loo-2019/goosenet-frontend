@@ -6,12 +6,14 @@ import Foot from '../components/foot'
 
 import Layout from '../components/layout'
 import Chat from '../pages/chat'
-import { Router } from 'next/router'
+import Router from 'next/router'
 
 class Home extends React.Component{
-
-  render(){
+  componentDidMount(){
     Router.push('/chat')
+  }
+
+  render(){  
     return (
       <Layout path={['Forum','Thread']} page="Forum">
         <h1 className="title">Welcome to Next!</h1>
