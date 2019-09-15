@@ -2,33 +2,29 @@ export const Chatrooms = [
     {
         name: 'Hack The Loo',
         members: 'You, Ruben, Hansa, Thanh',
-        messages: [
-            {
-
-            }
-        ]
+        id: 'htl6969'
     },
     {
-        name: 'ICON 330',
+        name: 'Unit 207',
         members: 'You, Ruben, Hansa, Thanh, Jack Dors...',
-        messages: [
-            {
-
-            }
-        ]
+        id: 'unit207',
     },
     {
         name: 'SLC Construction Team',
-        members: 'You, Feridun H., Mr. Goose'
+        members: 'You, Feridun H., Mr. Goose',
+        id: 'feridun',
     },
     {
-        name: 'thicc af',
-        members: 'Thanh, Thanh\'s Anime GF'
+        name: 'This Was Built Using React.',
+        members: 'please give us an oculus',
+        id: 'thanh-af',
     }
 ]
 
-export const baseUrl = 'https://us-central1-htn-2019-hack-the-loo.cloudfunctions.net'
-export const chatPostUrl = baseUrl+'/chat'
-export const chatGetUrl = baseUrl+'/chat'
+export const baseUrl = 'https://us-central1-htn-2019-hack-the-loo.cloudfunctions.net/api'
+export const chatPostUrl = baseUrl+'/chat/'
+export const chatGetUrl = baseUrl+'/chat/'
 export const announcePostUrl = baseUrl
 export const announceGetUrl = baseUrl
+
+export const xAuthCommon = 'ifg2NH7h8yhpD2U3UNyL'

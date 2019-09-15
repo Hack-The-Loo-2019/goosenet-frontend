@@ -7,10 +7,12 @@ import Layout from '../components/layout'
 import TextPic from '../components/skypify'
 import ChatMessage from '../components/chatmessage'
 import Chatroom from '../components/chatroom'
+import LoadingModal from '../components/loadingmodal'
+
 import {Chatrooms, baseUrl, chatGetUrl, chatPostUrl} from '../static/hardcode'
 
 import { Component } from 'react'
-// import Axios from 'axios';
+import Axios from 'axios'
 
 class Chat extends Component {
     constructor(props) {
@@ -22,10 +24,13 @@ class Chat extends Component {
             message:'',
             page: 'chatrooms',
             room: {
-                name: 'HackTheLoo',
-                members: 'You, Hansa, Ruben, Thanh'
+                name: null,
+                members: null,
+                id: null
             },
-            backbutton: this.backToChatrooms
+            messages: null,
+            backbutton: this.backToChatrooms,
+            loading: null
         }
         this.handleMessageInput = this.handleMessageInput.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -44,37 +49,51 @@ class Chat extends Component {
     }
 
     enterChat(chatroomData){
-        this.setState({
-            page: 'in-chat',
-            room: chatroomData,
-
+        this.setState({loading: true})
+        Axios.get(chatGetUrl+chatroomData.id).then((res)=>{
+            this.setState({
+                messages: res.data.data.reverse(),
+                page: 'in-chat',
+                room: chatroomData,
+                loading: false
+            })
         })
     }
 
-    async handleSubmit (event) {
-        event.preventDefault()
-        this.setState({ error: '' })
+    handleSubmit = (event)=> {
+        (async ()=>{
+        // this.setState({ error: '' })
         const message = this.state.message
-        const url = chatPostUrl
-        this.setState({ loading: "is-loading" })
+        if(this.state.message.length > 0){
+            const url = chatPostUrl+this.state.room.id
+            console.log('msg',message)
+            // this.setState({ loading: "is-loading" })
 
-        try {
-            const response = await Axios.post(url, {
-              "user": otherId,
-              "message":message
-            })
-            if (response.data.id != 0) {
-              console.log('Success')
-                // Do refresh here
-            } 
-          } catch (error) {
-            console.error(
-              'You have an error in your code or there are Network issues.',
-              error
-            )
-            this.setState({ error: error.message })
-          }
+            try {
+                const response = await Axios.post(url, {
+                "message":message
+                })
+                if (response.status == 204) {
+                    Axios.get(chatGetUrl+this.state.room.id).then((res)=>{
+                        var scrollingElement = (document.scrollingElement || document.body);
+                        scrollingElement.scrollTop = scrollingElement.scrollHeight;
+                        this.setState({messages: res.data.data.reverse()})
+                    }
+                    )
 
+                } else {
+                    throw Error("oops")
+                }
+            } catch (error) {
+                console.error(
+                'You have an error in your code or there are Network issues.',
+                error
+                )
+                this.setState({ error: error.message })
+            }
+            }
+        })()
+        return false
     }
 
     render() {
@@ -86,18 +105,18 @@ class Chat extends Component {
             displayPage = (
                 <div className='contentWrapper'>
                     <div className="container">
-                        <ChatMessage />
-                        <ChatMessage />
-                        <ChatMessage />
+                        {this.state.messages.map((msg)=>(
+                            <ChatMessage message={msg.message} username={msg.user.name} />
+                        ))}
                     </div>
                 </div>
             )
         } else if(this.state.page == 'chatrooms'){
             displayPage = <ChatroomsPage enterChat={this.enterChat}/>
         }
-
         return(
             <Layout page={this.state.page} tab={1}>
+                {!this.state.loading || <LoadingModal />}
                 {chatNav}
                 {displayPage}
                 {chatText}
@@ -139,10 +158,10 @@ class ChatTextBar extends React.Component{
         var inputStyle = this.props.message.length > 0? {width: '65vw'} : {}
         return (
             <footer className="foot" style={{height:'58.4px', textAlign: 'left'}}>
-                <form onSubmit={()=>{if(this.props.message.length > 0) this.props.handleSubmit()}} style={{marginTop: '11px'}}>
+                <div style={{marginTop: '11px'}}>
                     <input className="inputBar" style={inputStyle} id="name" name="name" placeholder="" type="text" required="" onChange={this.props.handleMessageInput}/>
-                    <button className="sendButton" style={buttonStyle} >Send</button>
-                </form> 
+                    <button onClick={this.props.handleSubmit} className="sendButton" style={buttonStyle} >Send</button>
+                </div> 
             </footer>
         )
     }

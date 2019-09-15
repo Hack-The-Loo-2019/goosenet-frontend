@@ -12,7 +12,7 @@ class Posts extends Component {
         return(
             <Layout page='Posts' tab={0}>
                 <div className='contentWrapper'>
-                    <Post chatroom="ruben want booz" poster="Ruben"/>
+                    <Post chatroom="sleepy" poster="Ruben" title="Does anyone have any redbull?" message="please I am so sleepy :( Jack Dorsey please buy me caffeine" timestamp="Sep 15, 04.45"/>
                     <div className="container-posts">
                       <table>
                           <tr>
@@ -80,7 +80,7 @@ class Post extends React.Component {
                 <div className='flexWrapper'>
                     <div className="titleCell" style={{paddingTop: '4.3px'}}>
                         <p style={{margin: '0 0 7.3px 0', fontSize: '1.1em'}}><b>
-                            ruben wants booze
+                            {this.props.title}
                         </b></p>    
                     </div>
                     <div className="labelCell">
@@ -93,7 +93,7 @@ class Post extends React.Component {
                     <div className="vertLine" style={{width: '2vw', borderRight: "2px solid lightgrey"}} />
                     <div className="contentColumn" style={{marginLeft: '3vw'}}>
                         <p style={{margin: '0'}}>
-                        I am ruben and I want booze. Ruben Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
+                        {this.props.message}
                         </p>
                     </div>
                 </div>
