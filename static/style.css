@@ -3,6 +3,10 @@
     color: #302f2f;
 }
 
+img {
+  opacity: 0.7;
+}
+
 .mainWrapper {
     position: fixed;
     width: 100vw;
@@ -160,7 +164,7 @@
     padding-top: 4.3px;
   }
 
-  .contentColumn {
+  .chatroom .contentColumn {
     margin-left: 3vw;
     padding-top: 9px;
   }
@@ -210,4 +214,9 @@
     color: #fff;
     background-color: #007bff;
     border-color: #007bff;
+}
+
+  .message .contentColumn {
+    margin-left: 3vw;
+    padding-top: 4px;
   }

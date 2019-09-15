@@ -9,6 +9,15 @@ export const Chatrooms = [
         ]
     },
     {
+        name: 'ICON 330',
+        members: 'You, Ruben, Hansa, Thanh, Jack Dors...',
+        messages: [
+            {
+
+            }
+        ]
+    },
+    {
         name: 'SLC Construction Team',
         members: 'You, Feridun H., Mr. Goose'
     },

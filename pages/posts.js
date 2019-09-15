@@ -9,7 +9,7 @@ class Posts extends Component {
 
     render() {
         return(
-            <Layout page='Posts' path={['Posts']}>
+            <Layout page='Posts' tab={0}>
                 <div className='contentWrapper'>
                     <div class="container-posts">
                       <table>
