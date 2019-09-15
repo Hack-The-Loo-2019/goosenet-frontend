@@ -164,7 +164,12 @@ img {
     padding-top: 4.3px;
   }
 
-  .contentColumn {
+  .chatroom .contentColumn {
     margin-left: 3vw;
     padding-top: 9px;
+  }
+
+  .message .contentColumn {
+    margin-left: 3vw;
+    padding-top: 4px;
   }

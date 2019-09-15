@@ -20,7 +20,7 @@ class Chat extends Component {
 
         this.state = {
             message:'',
-            page: 'in-chat',
+            page: 'chatrooms',
             room: {
                 name: 'HackTheLoo',
                 members: 'You, Hansa, Ruben, Thanh'
@@ -97,7 +97,7 @@ class Chat extends Component {
         }
 
         return(
-            <Layout page={this.state.page}>
+            <Layout page={this.state.page} tab={1}>
                 {chatNav}
                 {displayPage}
                 {chatText}
