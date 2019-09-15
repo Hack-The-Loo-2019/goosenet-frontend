@@ -41,6 +41,8 @@ class Forms extends Component {
         this.getSurveyList()
       }
 
+      // The code below is commented due to "Maximum number of collectors created per survey."
+
     //   getSurveyURL(string) {
     //     const url = 'https://api.surveymonkey.com/v3/surveys/' + string + '/collectors'
     //     const auth = 'bearer -MMu4iKFM1vKiFeMgM7kpAkhPwUt3Sm3lANFtKo7cJXeVlZ2vwTngI7tZ1TRtecjnTuXAJXMZLumLcrAqUvhHEF0yhKm5sJ3j1qtKxwflV4WkhzBi9TOoL5-Z5b4HfCH'
@@ -66,12 +68,14 @@ class Forms extends Component {
         return(
             <Layout page='Posts' path={['Posts']}>
                 <div className='contentWrapper'>
-                    <p>Survey Monkeys</p>
+                    <p> &nbsp; &nbsp; Survey Monkey Forms</p>
                     {this.state.data.map((talkList) => {
                         const { id, title} = talkList
                         var surveyURL
                         if (id == "188727696") {
                             surveyURL = 'https://www.surveymonkey.com/r/DNLLVRY'
+                        } else if (id == "188733083") {
+                            surveyURL = 'https://www.surveymonkey.com/r/YWCKXZQ'
                         }
                         return (
                             <div>
