@@ -12,7 +12,7 @@ class Layout extends React.Component {
     render(){
         return (
             <div className='mainWrapper'>
-                <Head title="zucc" />
+                <Head title="GooseNest" />
                 {!(this.props.page != 'in-chat')||<Nav/>}
                 {this.props.children}
                 {!(this.props.page != 'in-chat')||<Foot tab={this.props.tab} />}
