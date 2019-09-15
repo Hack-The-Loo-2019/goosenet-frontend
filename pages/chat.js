@@ -140,8 +140,8 @@ class ChatTextBar extends React.Component{
         return (
             <footer className="foot" style={{height:'58.4px', textAlign: 'left'}}>
                 <form onSubmit={this.props.handleSubmit} style={{marginTop: '11px'}}>
-                    <input class="inputBar" style={inputStyle} id="name" name="name" placeholder="" type="text" required="" onChange={this.props.handleMessageInput}/>
-                    <button class="sendButton" style={buttonStyle} >Send</button>
+                    <input className="inputBar" style={inputStyle} id="name" name="name" placeholder="" type="text" required="" onChange={this.props.handleMessageInput}/>
+                    <button className="sendButton" style={buttonStyle} >Send</button>
                 </form> 
             </footer>
         )

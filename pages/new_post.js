@@ -46,8 +46,8 @@ class NewPosts extends Component {
                 <div className='contentWrapper'>
                     <p> &nbsp; &nbsp; Add your new post here</p>
                     <form onSubmit={this.handleSubmit}>
-                        <textarea class="form-control" id="comments" name="message" placeholder="Message" rows="5"></textarea>
-                        <button class="btn btn-primary btn-block">Submit</button>
+                        <textarea className="form-control" id="comments" name="message" placeholder="Message" rows="5"></textarea>
+                        <button className="btn btn-primary btn-block">Submit</button>
                     </form>
                 </div>
             </Layout>
