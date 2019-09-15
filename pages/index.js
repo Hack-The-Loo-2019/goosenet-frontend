@@ -10,7 +10,7 @@ import Router from 'next/router'
 
 class Home extends React.Component{
   componentDidMount(){
-    Router.push('/chat')
+    Router.push('/chatdemo')
   }
 
   render(){  

@@ -8,9 +8,9 @@ import TextPic from '../components/skypify'
 import ChatMessage from '../components/chatmessage'
 import Chatroom from '../components/chatroom'
 import LoadingModal from '../components/loadingmodal'
-import Profile from '../components/profile'
+import Router from 'next/router'
 
-import {Chatrooms, baseUrl, chatGetUrl, chatPostUrl} from '../static/hardcode'
+import {baseUrl, chatGetUrl, chatPostUrl} from '../static/hardcode'
 
 import { Component } from 'react'
 import Axios from 'axios'
@@ -31,9 +31,7 @@ class Chat extends Component {
             },
             messages: null,
             backbutton: this.backToChatrooms,
-            loading: null,
-            profile: false,
-            profileName: null
+            loading: null
         }
         this.handleMessageInput = this.handleMessageInput.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -99,36 +97,32 @@ class Chat extends Component {
         return false
     }
 
-    closeProf(){
-        this.setState({profile: false})
-    }
-
-    openProf = () => {
-        console.log('hoi') 
-        this.setState({profile: true})
-    }
-
     render() {
         var chatNav = this.state.page=='in-chat'? <ChatNav room={this.state.room} back={this.state.backbutton} /> : null
         var chatText = this.state.page=='in-chat'? <ChatTextBar message={this.state.message} handleMessageInput={this.handleMessageInput} handleSubmit={this.handleSubmit}/> : null
 
-        var displayPage
-        if(this.state.page == 'in-chat'){
-            displayPage = (
-                <div className='contentWrapper'>
-                    <div className="container">
-                        {this.state.messages.map((msg)=>(
-                            <ChatMessage message={msg.message} username={msg.user.name} onClick={this.openProf}/>
-                        ))}
-                    </div>
-                </div>
-            )
-        } else if(this.state.page == 'chatrooms'){
-            displayPage = <ChatroomsPage enterChat={this.enterChat}/>
-        }
+        var displayPage = (
+            <div style={{width: '100vw', height:'100vh',display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', textAlign: 'center'}} >
+                <div style={{fontSize: '2em'}}>Enter a code to join your residence group!</div>
+                <br></br>
+                <input style={{width: '70vw', height: '10vw', border: '2px solid lightgrey', fontSize: "1.5em", padding: '1vw'}} />
+                <br></br>
+                <button style={{
+                    width: '40vw',
+                    height: '6vh',
+                    fontSize: '1.5rem',
+                    padding: '1vw 2vw',
+                    backgroundColor: '#007bff',
+                }} onClick={async()=>{
+                    await Axios.get('https://us-central1-htn-2019-hack-the-loo.cloudfunctions.net/api/pegasus/reset')
+                    Router.push('/chat')
+                }}> Join </button>
+            </div>
+        )
+
+
         return(
             <Layout page={this.state.page} tab={1}>
-                {!this.state.profile||<Profile name='Small rat' close={this.closeProf.bind(this)} refresh={this.enterChat}/>}
                 {!this.state.loading || <LoadingModal />}
                 {chatNav}
                 {displayPage}
@@ -180,17 +174,5 @@ class ChatTextBar extends React.Component{
     }
 }
 
-class ChatroomsPage extends React.Component{
-    
-    render(){
-        return (
-            <div className='contentWrapper'>
-                {Chatrooms.map(chatroomData=>(
-                    <Chatroom room={chatroomData} enterChat={this.props.enterChat}/>
-                ))}
-            </div>
-        )
-    }
-}
 
 export default Chat
