@@ -11,7 +11,7 @@ class Layout extends React.Component {
                 <Head title="zucc" />
                 {!(this.props.page != 'in-chat')||<Nav/>}
                 {this.props.children}
-                {!(this.props.page != 'in-chat')||<Foot  />}
+                {!(this.props.page != 'in-chat')||<Foot tab={1} />}
             </div>
         )
     }

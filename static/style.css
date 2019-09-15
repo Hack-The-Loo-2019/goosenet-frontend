@@ -3,6 +3,10 @@
     color: #302f2f;
 }
 
+img {
+  opacity: 0.7;
+}
+
 .mainWrapper {
     position: fixed;
     width: 100vw;

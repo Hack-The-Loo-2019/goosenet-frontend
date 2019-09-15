@@ -79,7 +79,7 @@ class Chat extends Component {
 
     render() {
         var chatNav = this.state.page=='in-chat'? <ChatNav room={this.state.room} back={this.state.backbutton} /> : null
-        var chatText = this.state.page=='in-chat'? <ChatTextBar /> : null
+        var chatText = this.state.page=='in-chat'? <ChatTextBar message={this.state.message} handleMessageInput={this.handleMessageInput} handleSubmit={this.handleSubmit}/> : null
 
         var displayPage
         if(this.state.page == 'in-chat'){
@@ -129,11 +129,19 @@ class ChatNav extends React.Component{
 
 class ChatTextBar extends React.Component{
     render(){
+        var buttonStyle = this.props.message.length > 0? {
+            width: '20vw',
+            fontSize: '1rem',
+            padding: '1vw 2vw',
+            height: '32.85px',
+            backgroundColor: '#007bff',
+        } : {}
+        var inputStyle = this.props.message.length > 0? {width: '65vw'} : {}
         return (
             <footer className="foot" style={{height:'58.4px', textAlign: 'left'}}>
-                <form onSubmit={this.handleSubmit} style={{marginTop: '11px'}}>
-                    <input class="inputBar" id="name" name="name" placeholder="" type="text" required="" onChange={this.handleMessageInput}/>
-                    <button class="sendButton">Send</button>
+                <form onSubmit={this.props.handleSubmit} style={{marginTop: '11px'}}>
+                    <input class="inputBar" style={inputStyle} id="name" name="name" placeholder="" type="text" required="" onChange={this.props.handleMessageInput}/>
+                    <button class="sendButton" style={buttonStyle} >Send</button>
                 </form> 
             </footer>
         )
