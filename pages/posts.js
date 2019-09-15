@@ -12,58 +12,7 @@ class Posts extends Component {
         return(
             <Layout page='Posts' tab={0}>
                 <div className='contentWrapper'>
-                    <Post chatroom="sleepy" poster="Ruben" title="Does anyone have any redbull?" message="please I am so sleepy :( Jack Dorsey please buy me caffeine" timestamp="Sep 15, 04.45"/>
-                    <div className="container-posts">
-                      <table>
-                          <tr>
-                            <td>
-                                <img src="static/favicon.ico" alt="Avatar" style={{width: '100%', marginTop:'0'}}/>
-                            </td>
-                            <td>
-                                <h4 style={{margin: '0'}}>Mr. Ngentot</h4>
-                                <p syle={{margin:'0.5em'}}>Hello. How would you like to ngentot today. When where and how much per hour?</p>
-                            </td>
-                          </tr>  
-                          <tr>
-                              <a href="https://urlhere.com/thread_link">Reply</a>
-                          </tr>
-                      </table>
-                      <span className="time-right">11:00</span>
-                    </div>
-                    <div className="container-posts">
-                      <table>
-                          <tr>
-                            <td>
-                                <img src="static/favicon.ico" alt="Avatar" style={{width: '100%', marginTop:'0'}}/>
-                            </td>
-                            <td>
-                                <h4 style={{margin: '0'}}>Ms. Duc Thanh</h4>
-                                <p syle={{margin:'0.5em'}}>Hello. How much do you charge per hour for your services?</p>
-                            </td>
-                        </tr>
-                        <tr>
-                              <a href="https://urlhere.com/thread_link">Reply</a>
-                          </tr>
-                      </table>
-                      <span className="time-right">12:69</span>
-                    </div>
-                    <div className="container-posts">
-                      <table>
-                          <tr>
-                            <td>
-                                <img src="static/favicon.ico" alt="Avatar" style={{width: '100%', marginTop:'0'}}/>
-                            </td>
-                            <td>
-                                <h4 style={{margin: '0'}}>Mr. Goose</h4>
-                                <p syle={{margin:'0.5em'}}>Guys please lets go get lunch with right now Im so hungry.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                              <a href="https://urlhere.com/thread_link">Reply</a>
-                          </tr>
-                      </table>
-                      <span className="time-right">14:30</span>
-                    </div>
+                    <Post chatroom="borrowing" poster="Kiel Lind" title="Anyone have a spare vacuum?" message="Looking to borrow a vacuum cleaner, 14th floor. Payment will be done through campus pizza" timestamp="Sep 13, 14.45"/>
                 </div>
             </Layout>
         );
@@ -98,7 +47,7 @@ class Post extends React.Component {
                     </div>
                 </div>
                 <div className="flexWrapper" style={{margin:'12px 0 0 1vw'}}>
-                    <TextPic radius={2} units='vw' string="rooben"/>
+                    <TextPic radius={2} units='vw' string={this.props.poster}/>
                     <div className="posterColumn" style={{display: 'flex', marginLeft: '1vw', width: '100%'}}>
                         <p style={{fontSize: '0.75em', margin: '0', color: '#666666', flexGrow: '10'}}>
                             Posted by {this.props.poster}, {this.props.timestamp}
